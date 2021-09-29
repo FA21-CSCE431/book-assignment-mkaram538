@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= form.label :published_date %>
-    <%= form.text_field :published_date %>
+    <%= form.date_select("article", "written_on", prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }) :published_date %>
   </div>
 
   <div class="actions">
