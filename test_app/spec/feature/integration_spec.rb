@@ -32,7 +32,9 @@ RSpec.describe 'Creating a book', type: :feature do
     fill_in 'Title', with: 'harry potter'
     fill_in 'Author', with: 'J. K. Rowling'
     fill_in 'Price', with: '20'
-    fill_in 'Published date', with: '2/2/2022'
+    select '30', :from => 'book[date_published(3i)]'
+	select 'September', :from => 'book[date_published(2i)]'
+	select '2021', :from => 'book[date_published(1i)]'
     click_on 'Create Book'
     visit books_path
     click_on 'Show'
@@ -44,10 +46,12 @@ RSpec.describe 'Creating a book', type: :feature do
     fill_in 'Title', with: 'harry potter'
     fill_in 'Author', with: 'J. K. Rowling'
     fill_in 'Price', with: '20'
-    fill_in 'Published date', with: '2/2/2022'
+    select '30', :from => 'book[date_published(3i)]'
+	select 'September', :from => 'book[date_published(2i)]'
+	select '2021', :from => 'book[date_published(1i)]'
     click_on 'Create Book'
     visit books_path
     click_on 'Show'
-    expect(page).to have_content('2022-02-02')
+    expect(page).to have_content('2021-02-02')
   end
 end
