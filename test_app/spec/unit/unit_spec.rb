@@ -7,7 +7,7 @@ RSpec.describe Book, type: :model do
       title: 'harry potter',
       author: 'J. K. Rowling',
       price: '20',
-      published_date: '2/2/2022'
+      published_date: Date.new(1997, 10, 10)
     )
   end
 

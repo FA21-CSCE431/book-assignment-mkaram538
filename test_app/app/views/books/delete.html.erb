@@ -1,0 +1,25 @@
+<div class="Book Delete">
+  <h2>Confirm Book to Destroy</h2>
+  
+  <%= form_for(@book, :method => 'delete') do |f| %>
+	
+    <strong>Title:</strong>
+    <%= @book.title %>
+    <br/>
+    <strong>Author:</strong>
+    <%= @book.author %>
+    <br/>
+    <strong>Price:</strong>
+    <%= @book.price %>$
+	<br/>
+    <strong>Date Published:</strong>
+    <%= @book.published_date %>
+	<br/>
+	
+	<div class = "actions">
+	  <%= f.submit(" Confirm Delete") %>
+	</div>
+  <% end %>
+  
+  <td><%= link_to 'Back', books_path %>
+</div>
