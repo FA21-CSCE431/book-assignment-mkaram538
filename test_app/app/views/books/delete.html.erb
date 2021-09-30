@@ -1,20 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Destroy Book?</h1>
-
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-  <br/>
-  <strong>Author:</strong>
-  <%= @book.author %>
-  <br/>
-  <strong>Price:</strong>
-  <%= @book.price %>$
-  <br/>
-  <strong>Date Published:</strong>
-  <%= @book.published_date %>
-</p>
-
-<td><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<td><%= link_to 'Back', books_path %>
+<div class="Book Delete">
+  <h2>Destroy Book?</h2>
+  
+  <%= form_for(@book, :method => 'delete) do |f| %>
+	<p>
+	  <strong>Title:</strong>
+	  <%= @book.title %>
+	  <br/>
+	  <strong>Author:</strong>
+	  <%= @book.author %>
+	  <br/>
+	  <strong>Price:</strong>
+	  <%= @book.price %>$
+	  <strong>Date Published:</strong>
+	  <%= @book.published_date %>
+	</p>
+	
+	<div class = form-buttons">
+	  <%= f.submit("Delete Subject") %>
+	</div>
+  <% end %>
+  
+  <td><%= link_to 'Back', books_path %>
+</div>
